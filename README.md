@@ -10,4 +10,3 @@ The repository is organised to ensure easy navigation through the course content
 •	Source Code: Python scripts and Jupyter Notebook for assignments and projects.
 •	Documentation: Description and explanations of the approach, including comments within the code.
 •	Readme: Instruction on how to run the code, requirements and brief of the topics.  
- can you write this within 360 cherecter 
