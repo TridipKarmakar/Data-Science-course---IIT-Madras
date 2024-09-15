@@ -1,5 +1,5 @@
 # Data-Science-course---IIT-Madras
-This repository contains all the programming assignments, projects and exercises as part of the IIT Madras Data Science course, it covers a broad range of topics, including: /n
+This repository contains all the programming assignments, projects and exercises as part of the IIT Madras Data Science course, it covers a broad range of topics, including:
 •	Python Programming: Basic to advanced Python concepts with practice data structures (lists, dictionaries, tuples, arrays).
 •	Data Handling: Operations with data using libraries like NumPy, Pandas and Matplotlib.
 •	Statistics: Fundamental statistics concepts applied to data analysis and decision-making.
