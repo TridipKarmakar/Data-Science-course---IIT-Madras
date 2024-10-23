@@ -1,14 +1,3 @@
-lines = []
-n = 0
-while True: # repeat forever since we are breaking inside
-    string_input = input()
-    if string_input == "END" : # The terminal condition
-        break
-    else  :
-        lines.insert(0,string_input)
-while (n < len(lines)) :
-    if ((n+1) % 2 == 0) :
-        print(lines[n])
-    n+=1
-   
-    
+int_iterable = [1,2,3,45,6,7,8,9]
+maxi_int_interable  = max([1,2,3,45,6,7,8,9])
+print(maxi_int_interable) 
