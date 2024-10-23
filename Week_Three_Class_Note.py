@@ -1,1 +1,0 @@
-print(list(range(5,21,5)))
