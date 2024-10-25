@@ -203,3 +203,115 @@ def do_set_operation(set1, set2, set3, item1, item2):
     print(sorted((set2 - set3) | (set3 - set2)))
 
     return set1,sorted(set1),sorted(set2),sorted(set3)
+
+## GrPA 3 - List and set application - GRADED
+
+min =  None
+
+del min     #I have use it to del given min in question, otherwise it will not run
+min_val = None
+
+def find_min(items:list):
+    min_val = min(items)
+    return min_val
+
+def odd_increment_even_decrement_no_modify(items) -> list:
+    return ([(i + 1) if (i % 2 != 0) else (i - 1) for i in items])
+   
+def odd_square_even_double_modify(items:list) -> list:
+    for i in range(len(items)):
+        if (items[i] % 2 != 0):
+            items[i] **= 2
+        else:
+            items[i] *= 2
+    return items
+
+def more_than_two_unique_vowels(sentence):
+    vowels = 'aeiou'
+    split_sentence = sentence.split(',')
+    result = set()
+    for word in split_sentence:
+        unique_vowels = set(char for char in word.lower() if char in vowels)
+        if (len(unique_vowels) > 2):
+            result.add(word)
+    return result
+
+def sum_of_list_of_lists(lol):
+    total_sum = 0
+    for sublist in lol:
+        total_sum += sum(sublist)
+    return total_sum
+
+def flatten(lol):
+    result = []
+    for item in lol:
+        if isinstance(item, list):
+            result.extend(flatten(item))
+        else:
+            result.append(item)
+    return result
+
+def all_common(strings):
+    common_chars = set(strings[0])
+    for string in strings[1:]:
+        common_chars &= set(string)
+    return ''.join(sorted(common_chars))
+
+def vocabulary(sentences):
+    vocab = set()
+    for sentence in sentences:
+        words = sentence.lower().split()
+        vocab.update(words)
+    return vocab
+
+## GrPA 4 - Function Basics - GRADED
+
+def swap_halves(items):
+    mid = len(items) // 2
+    return items[mid:] + items[:mid]
+
+def swap_at_index(items, k):
+    return items[k+1:] + items[:k+1]
+
+def rotate_k(items, k=1):
+    k = k % len(items)  # to handle k greater than the length of the items
+    return items[-k:] + items[:-k]
+
+def first_and_last_index(items, elem):
+    first_index = items.index(elem)
+    last_index = len(items) - 1 - items[::-1].index(elem)
+    return (first_index, last_index)
+
+def reverse_first_and_last_halves(items):
+    mid = len(items) // 2
+    items[:mid] = reversed(items[:mid])
+    items[mid:] = reversed(items[mid:])
+
+## GrPA 5 - Comprehensions - GRADED
+def sum_of_squares(numbers):
+    return sum(x ** 2 for x in numbers)
+
+def total_cost(cart):
+    return sum(quantity * price for quantity, price in cart)
+
+def abbreviation(sentence):
+    return '.'.join(word[0].upper() for word in sentence.split()) + '.'
+
+def palindromes(words):
+    return [word for word in words if word == word[::-1]]
+
+def all_chars_from_big_words(sentence):
+    return {char.lower() for word in sentence.split() if len(word) > 5 for char in word}
+
+def flatten(lol):
+    return [item for sublist in lol for item in sublist]
+
+def unflatten(items, n_rows):
+    n_cols = len(items) // n_rows
+    return [items[i*n_cols:(i+1)*n_cols] for i in range(n_rows)]
+
+def make_identity_matrix(m):
+    return [[1 if i == j else 0 for j in range(m)] for i in range(m)]
+
+def make_lower_triangular_matrix(m):
+    return [[j + 1 if j <= i else 0 for j in range(m)] for i in range(m)]
