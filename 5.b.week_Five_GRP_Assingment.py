@@ -27,6 +27,7 @@ def dictionary_operations(fruit_prices:dict, fruits:list):
     print(sorted(fruit_prices.values()))
 
 def increase_prices(fruit_prices:dict) -> None:
+
     '''
     Increase the prices of every fruit by 20 percent and round to two decimal places
 
@@ -35,15 +36,17 @@ def increase_prices(fruit_prices:dict) -> None:
 
     Return:
     None - Do not return any thing - modify inplace
+
     '''
 
     for fruit in fruit_prices:
-        fruit_prices[fruit]*=1.2
+        fruit_prices[fruit]*= 1.2
         fruit_prices[fruit] = round(fruit_prices[fruit],2)
 
 def dict_from_string(string:str,key_type,value_type):
+    
     '''
-    Given a string where each line has a comma seperated key-value pair, create a dictionary out of it. Also convert the types of key and values to the given types.
+    Given a string where each line has a comma separated key-value pair, create a dictionary out of it. Also convert the types of key and values to the given types.
 
     Arguments:
     string - str: string to be parsed
@@ -52,6 +55,7 @@ def dict_from_string(string:str,key_type,value_type):
 
     Return:
     D - dict: the output dictionary
+
     '''
 
     D = {}
@@ -62,7 +66,7 @@ def dict_from_string(string:str,key_type,value_type):
 
 def dict_to_string(D:dict) -> str:
     '''
-    Convert the given dictionary back to the string fromat produced by `dict_from_string`. Again, do not use loops or conditionals, use comprehensions.
+    Convert the given dictionary back to the string format produced by `dict_from_string`. Again, do not use loops or conditionals, use comprehensions.
 
     '''
 
@@ -71,6 +75,7 @@ def dict_to_string(D:dict) -> str:
 # GrPA 2 - Dictionary Applications - GRADED
 
 def total_price(fruit_prices: dict, purchases) -> float:
+    
     '''
     Compute the fruit prices give the quantity of each fruit. Do not use the sum function.
 
@@ -80,6 +85,7 @@ def total_price(fruit_prices: dict, purchases) -> float:
 
     Return:
     total_price: float
+
     '''
 
     total = 0
@@ -90,6 +96,7 @@ def total_price(fruit_prices: dict, purchases) -> float:
 def total_price_no_loops(fruit_prices: dict, purchases) -> float:
     '''
     Compute the total price without loops.
+
     '''
 
     return sum(
@@ -106,6 +113,7 @@ def find_cheapest_fruit(fruit_prices:dict) -> str:
 
     Return:
     cheapest_fruit: str - the fruit with the lowest price
+
     '''
 
     fruit_price_tuples = list(fruit_prices.items())
@@ -118,6 +126,7 @@ def find_cheapest_fruit(fruit_prices:dict) -> str:
 def find_cheapest_fruit_no_loops(fruit_prices:dict) -> str:
     '''
     Find the cheapest fruit using min function. Do not use loops
+
     '''
 
     return min(fruit_prices, key=fruit_prices.get)
