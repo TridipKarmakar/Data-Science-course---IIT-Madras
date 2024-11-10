@@ -130,4 +130,39 @@ def find_cheapest_fruit(fruit_prices2 : dict ) -> str :
 cheapest_fruit = find_cheapest_fruit(fruit_prices2)
 print(cheapest_fruit)
 
+def find_cheapest_fruit_without_loop(fruit_prices2 : dict ) -> str :
+    return(min(fruit_prices2, key = fruit_prices2.get), min(fruit_prices2.values()))
 
+cheapest_fruit_name,cheapest_fruit_price = (find_cheapest_fruit_without_loop(fruit_prices2))
+print("The cheapest fruits is",cheapest_fruit_name,"and the price is rs.",cheapest_fruit_price)
+
+
+
+list_of_fruits = ["Avocado","Apple","Banana","Blackberry","Cherry","Cranberry","Grape","Mango"]
+
+keys_set = set()
+D = {}
+for fruit in list_of_fruits :    
+    keys_set.update(fruit[0]) 
+
+for key in keys_set :
+    D[key] = []
+print(D)
+for fruit in list_of_fruits :
+    print(fruit)
+    for key in D :
+        if fruit[0] == key : 
+            D[key].append(fruit)
+
+print(D)
+   
+
+
+
+
+details = "1,2,3,4,5"    
+
+splited_list= sorted(details.split(","))
+
+
+print(splited_list)
