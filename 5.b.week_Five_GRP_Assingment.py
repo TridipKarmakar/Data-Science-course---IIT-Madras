@@ -180,22 +180,22 @@ def bin_fruits(fruit_prices):
     return binned_fruits
 
 # GrPA 3 - Composing functions - GRADED
-def index_of_first_occurance(row:list,elem):
+def index_of_first_occurrence(row:list,elem):
     '''
-    Given a list find the index of first occurance of 1 in it
+    Given a list find the index of first occurrence of 1 in it
     '''
     return row.index(elem)
 
-def index_of_last_occurance(row:list,elem):
+def index_of_last_occurrence(row:list,elem):
     '''
-    Given a list find the index of last occurance of 1 in it.
+    Given a list find the index of last occurrence of 1 in it.
     Hint: use index_of_first_one with reversal.
     '''
     return len(row) - 1 - row[::-1].index(elem)
 
 def is_valid_coordinate(x:int,y:int, M):
     '''
-    Checks if the x,y is a valid corrdinate(indices) in the matrix M(list of list). Assume coordinates are non-negative
+    Checks if the x,y is a valid coordinate(indices) in the matrix M(list of list). Assume coordinates are non-negative
     '''
 
     r,c = len(M), len(M[0])

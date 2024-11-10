@@ -138,31 +138,84 @@ print("The cheapest fruits is",cheapest_fruit_name,"and the price is rs.",cheape
 
 
 
+# list_of_fruits = ["Avocado","Apple","Banana","Blackberry","Cherry","Cranberry","Grape","Mango"]
+
+# keys_set = set()
+# D = {}
+# for fruit in list_of_fruits :    
+#     keys_set.update(fruit[0]) 
+
+# for key in keys_set :
+#     D[key] = []
+# print(D)
+# for fruit in list_of_fruits :
+#     print(fruit)
+#     for key in D :
+#         if fruit[0] == key : 
+#             D[key].append(fruit)
+
+# print(D)
+
+
+# group
+
 list_of_fruits = ["Avocado","Apple","Banana","Blackberry","Cherry","Cranberry","Grape","Mango"]
+def group_fruits (list_of_fruits : list) :
 
-keys_set = set()
-D = {}
-for fruit in list_of_fruits :    
-    keys_set.update(fruit[0]) 
+    fruits_with_first_letter = {}
+    for fruit in list_of_fruits :
+        if fruit[0] not in fruits_with_first_letter :
+            fruits_with_first_letter[fruit[0]] = []
+        fruits_with_first_letter[fruit[0]].append(fruit)
+    return{ letter : sorted( fruits) for letter , fruits in fruits_with_first_letter.items()}
 
-for key in keys_set :
-    D[key] = []
-print(D)
-for fruit in list_of_fruits :
-    print(fruit)
-    for key in D :
-        if fruit[0] == key : 
-            D[key].append(fruit)
-
-print(D)
-   
+fruits_list_with_first_letter = group_fruits(list_of_fruits)
+print(f"14. The dictionary of fruits with the first letter as key {fruits_list_with_first_letter}")
 
 
+fruits_bin_price = {'Apple':7,'Banana':3,'Orange':4,'Grapes':6,'Papaya':5,'Mango':2,'Amla':1,'Jackfruit':10}
+
+def bin_fruits(fruits_bin_price : dict ):
+    binned_fruits = { category : set() for category  in ["cheap","affordable", "costly"]}
+    for fruit in fruits_bin_price :
+        if fruits_bin_price[fruit] < 3 :
+            binned_fruits["cheap"].add(fruit)
+        elif  6 >= fruits_bin_price[fruit] >= 3 :
+            binned_fruits["affordable"].add(fruit)
+        else  :
+            binned_fruits["costly"].add(fruit)
+        
+    return(binned_fruits)
+
+bin_fruits_dict = bin_fruits(fruits_bin_price) 
+print(f"15. The list of the bin fruits as per the category is : {bin_fruits_dict}")
+
+# index of the first occurrence
+
+row = [0, 0, 1, 1, 0]
+print(f"16. The index number of the first occurrence element in the given list is : {row.index(1)}")
+
+# index of the last occurrence
+print(f"17. The index number of the last occurrence element in the given list is : {len(row) - 1 - row[::-1].index(1)}")
 
 
-details = "1,2,3,4,5"    
+matrix = [
+[0, 0, 1, 1],
+[0, 0, 0, 1],
+[1, 1, 1, 1],
+[1, 0, 0, 0],
+[1, 1, 0, 0]
+] 
 
-splited_list= sorted(details.split(","))
 
+def is_valid_coordinate(x :int , y : int , matrix) :
+    r , c = len(matrix) , len(matrix[0])
+    if 0 <= x < r and 0 <= y <c :
+        return "a valid coordinate in the given matrix."    
+    else :
+        return  "not a valid coordinate in the given matrix." 
+row = 3
+col = 2
+is_valid  = is_valid_coordinate (row, col, matrix)
 
-print(splited_list)
+print(f"18. The given {row} X {col} is {is_valid}" )
