@@ -219,3 +219,24 @@ col = 2
 is_valid  = is_valid_coordinate (row, col, matrix)
 
 print(f"18. The given {row} X {col} is {is_valid}" )
+import re 
+passage='''
+aaaa bbbb cccc AAAA bbbb
+CCCCCC DDDDD CCCCC CdcDC
+abab cDcD
+'''
+
+set_list ={}
+passage = passage.strip()
+
+for first_letter in list(re.split(r'[ \n]+', passage)) :
+    print(first_letter)
+    print(first_letter[0])
+    if first_letter[0].lower() in set_list   :
+        set_list[first_letter[0].lower()] = set_list[first_letter[0].lower()] +1  
+
+    elif first_letter[0] not in set_list:
+        set_list[first_letter[0].lower()] = 1
+    print(set_list)
+
+print(max(set_list, key = set_list.get))
