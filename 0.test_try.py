@@ -230,13 +230,121 @@ set_list ={}
 passage = passage.strip()
 
 for first_letter in list(re.split(r'[ \n]+', passage)) :
-    print(first_letter)
-    print(first_letter[0])
     if first_letter[0].lower() in set_list   :
         set_list[first_letter[0].lower()] = set_list[first_letter[0].lower()] +1  
 
     elif first_letter[0] not in set_list:
         set_list[first_letter[0].lower()] = 1
-    print(set_list)
 
-print(max(set_list, key = set_list.get))
+print(f"19. Maximum number of first letter in a strings is : {max(set_list, key = set_list.get)}")
+
+
+
+
+
+
+
+
+
+'---------------------------------------------------------------------------- OPPE_assingments may sets'
+print()
+print("OPPE_assingments may sets")
+print()
+def abs_diff_between_sum_and_sum_of_squares(a:int, b:int) -> int:
+    '''
+    Given two integers, find the absolute difference between 
+    their sum and the sum of their squares.
+    Eg. 
+    a, b = 2,3 
+    sum is 5
+    sum of squares is 13 
+    absolute difference is 8
+
+    Args:
+        a - int : The first integer.
+        b - int : The second integer.
+
+    Returns:
+        int: absolute difference between the sum and the sum of squares
+    '''     
+    abs_difference =  abs((a*a)-(b*b))
+
+    return(abs_difference)
+
+a = 2
+b = 3
+
+abs_diff = abs_diff_between_sum_and_sum_of_squares(2,3) 
+
+print(f'1. absolute difference between the sum and the sum of squares is : {abs_diff}')
+
+strings_swaps  = "abcdefghi"
+strings_swaps  = "abcde"
+
+def swap_except_middle_three(s : str) :
+
+    middle_string =  strings_swaps[int(((len(strings_swaps)-1)/2)-1):int(((len(strings_swaps)-1)/2)+2)]
+    right_string = strings_swaps[int(((len(strings_swaps)-1)/2)+2):]
+    left_string = strings_swaps[:int(((len(strings_swaps)-1)/2)-1)]
+
+
+    return(right_string+middle_string+left_string)
+
+
+strings_swaps_value = swap_except_middle_three(strings_swaps) 
+
+print(f"2. The modified string with the parts swapped is : {strings_swaps_value}")
+
+
+# list1 = [1, 2, 3,4]
+# list2 = ['a', 'b', 'c', 'd']
+# list3 = [(1,1),(2,2),(3,3), (4,4 )]
+
+# #output = [1, 'a', (1,1), 2, 'b', (2,2), 3, 'c', (3,3)]
+# output = []
+# start = 0 
+# end = 0
+
+# for items1 in list1 :
+#     end += 1
+#     output.append(items1)
+#     for items2 in list2[start:end]:
+#         print(items2)
+#         output.append(items2)
+#         for items3 in list3[start:end] :
+#             output.append(items3)   
+#             start +=1   
+# print(output)
+
+
+def interleave_lists(list1, list2, list3) :
+    list_output = []
+    for item in range(len(list3)) :
+        list_output.extend((list1[item],list2[item],list3[item]))
+
+    return(list_output)
+
+
+list1 = [1, 2, 3]
+list2 = ['a', 'b', 'c']
+list3 = [(1,1),(2,2),(3,3)]
+    
+output_list = interleave_lists(list1,list2,list3)
+
+print(f'4. A list containing interleaved elements from all three lists : {output_list}')
+
+
+
+num_input  = "123456"
+
+def has_more_than_5_unique_digits(num_input) :
+    num_input = set(num_input)
+    if (len(num_input)) > 5 :
+        return True
+    else :
+        return False
+more_than_5_digits = has_more_than_5_unique_digits(num_input)
+print(f'5. True if the integer has more than 5 unique digits, otherwise False. : {more_than_5_digits}')
+
+def final_position(pos : tuple, value : tuple , time : int ) -> tuple :
+    
