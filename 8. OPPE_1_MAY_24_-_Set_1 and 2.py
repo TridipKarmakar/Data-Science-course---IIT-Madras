@@ -61,7 +61,7 @@ def swap_except_middle_three(s: str) -> str:
     # return
     return new_string
 
-
+#practice done
 def interleave_lists(list1, list2, list3):
     '''
     Given three lists of same length, 
@@ -85,7 +85,7 @@ def interleave_lists(list1, list2, list3):
     # empty list
     interleaved_list = []
 
-    # itreate over each of the list
+    # iterate over each of the list
     for i in range(len(list1)):
         # add one element form each list at the current index to interleaved list
         interleaved_list.extend([list1[i], list2[i], list3[i]])
@@ -93,7 +93,7 @@ def interleave_lists(list1, list2, list3):
     # return
     return interleaved_list
 
-
+#practice done
 def has_more_than_5_unique_digits(num: int) -> bool:
     '''
     Determine if a given integer has more than 5 unique digits.
@@ -117,13 +117,13 @@ def has_more_than_5_unique_digits(num: int) -> bool:
     # return ans
     return ans
 
-
+#practice done
 def final_position(pos: tuple, vel: tuple, time:int) -> tuple:
     '''
     Given an initial position of a point moving in a cartesian plane with a constant velocity, 
     find the the final position of the point after a given time. 
 
-    Hint: final position = intial position + velocity * time
+    Hint: final position = initial position + velocity * time
 
     Args:
         pos - tuple[int]: A tuple representing the position vector (x1, y1).

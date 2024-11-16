@@ -346,5 +346,21 @@ def has_more_than_5_unique_digits(num_input) :
 more_than_5_digits = has_more_than_5_unique_digits(num_input)
 print(f'5. True if the integer has more than 5 unique digits, otherwise False. : {more_than_5_digits}')
 
-def final_position(pos : tuple, value : tuple , time : int ) -> tuple :
-    
+#def final_position(pos : tuple, value : tuple , time : int ) -> tuple :
+# if my coordinates 
+pos = (6,3) 
+value = (4,5)
+time = 5
+
+def final_position(pos : tuple, value :tuple, time : int) -> tuple :
+
+    # from the above value the final position will be 
+
+    final_x = (pos[0] + value[0]) * time
+    final_y = (pos[1] + value[1]) * time
+
+    return((final_x,final_y ))
+
+get_final_position = final_position(pos,value,time)
+
+print("6. The final positions is :", get_final_position)
