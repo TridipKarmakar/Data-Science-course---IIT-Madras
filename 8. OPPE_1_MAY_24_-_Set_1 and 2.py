@@ -143,6 +143,8 @@ def final_position(pos: tuple, vel: tuple, time:int) -> tuple:
     # return tuple
     return (final_x, final_y)
 
+# practice Done 
+
 def remove_keys_not_in_list(d: dict, l: list) -> None:
     '''
     Remove keys from a dictionary that are not present in a given list.
@@ -150,7 +152,7 @@ def remove_keys_not_in_list(d: dict, l: list) -> None:
 
     Note: 
         Modifying a dict while iterating over it will give an error in python. 
-        So, make a copy of the dict keys and then iterate over it.
+        So, make a copy of the dict keys and then iterate over it.d
 
     Args:
         d (dict): The dictionary to modify.
@@ -167,8 +169,8 @@ def remove_keys_not_in_list(d: dict, l: list) -> None:
 
 
 
-#Problems 2 
-
+# Problems 2 
+# practice done
 def is_all_same_word_twice(strings: list) -> bool:
     '''
     Checks if all strings follow the format where 
@@ -194,11 +196,12 @@ def is_all_same_word_twice(strings: list) -> bool:
         # Check if the word is repeated and not empty
         if before_string != after_string or not before_string:
             return False
-    
     return True
+
 #problem 3
 import re
-def most_occuring_first_letter(passage: str) -> str:
+
+def most_occurring_first_letter(passage: str) -> str:
     '''
     Returns the letter which occurs most frequently 
     as the first letter of any word.(case insensitive)
@@ -224,7 +227,7 @@ def most_occuring_first_letter(passage: str) -> str:
 
 #problems3
 import re
-def most_occuring_first_letter(passage: str) -> str:
+def most_occurring_first_letter(passage: str) -> str:
     '''
     Returns the letter which occurs most frequently 
     as the first letter of any word.(case insensitive)

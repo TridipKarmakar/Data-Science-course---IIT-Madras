@@ -364,3 +364,41 @@ def final_position(pos : tuple, value :tuple, time : int) -> tuple :
 get_final_position = final_position(pos,value,time)
 
 print("6. The final positions is :", get_final_position)
+
+d = {1:'a',2:'b',3:'c',4:'d',5:'e'}
+l = [9,8,7,1,2]
+
+def remove_keys_not_in_list (d:dict , l: list ) -> None : 
+    
+    key_list = list(d.keys())
+    for i in key_list :
+        if i not in l :
+            del d[i]
+
+final_dict = remove_keys_not_in_list(d,l)
+print("7. The final dictionary after deleting all keys in mot present in list l :", d )
+
+
+passage = '''
+This is a test sentence where I wanted
+to let you know that the sentences are
+multi-line and words are separated by spaces.
+The first letters may be of different case but you
+should consider it as lowercase and return the lowercase
+letter as the result. Also check the other test cases
+where you can easily count the most occuring first letter.
+'''
+
+import re
+
+def most_occurring_first_letter(passage: str) -> str :
+    list_of_letter = {}
+    passage = passage.strip()
+    for words in list(re.split(r'[ \n]+', passage)) :
+        if words[0] not in list_of_letter : 
+            list_of_letter[words[0].lower()] = 1
+        else : 
+            list_of_letter[words[0].lower()] += 1
+
+    return(max(list_of_letter , key=list_of_letter.get)) 
+
