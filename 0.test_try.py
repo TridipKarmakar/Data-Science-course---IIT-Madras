@@ -439,3 +439,18 @@ expected_output = set({})
 # alternative logic is set difference : 
 expected_output =  set(string_1) - set(string_2)
 print("10. Unique character presents which are not present in the second strings are :",expected_output )
+
+
+is_equal = (2, 3) 
+a , b = is_equal 
+
+print("11. Final out-put of tuples with ",(a,) * b + (b,) * a)   
+
+int_n = 5 
+
+def num_squares(n : int) -> dict[int,int] :
+    final_dict = { i : i**2 for i in range( 1,int_n + 1)}
+    return(final_dict)
+
+final_output = num_squares(int_n)
+print("11. Dictionary with key and their squares as values :",final_output)
