@@ -314,7 +314,7 @@ def is_right_triangle_with_even_sides(a: int, b: int, c: int) -> bool:
         # Check if both perpendicular sides are even
         return a % 2 == 0 and b % 2 == 0
     return False
-
+# Practice Done 
 def is_odd_indices_alpha_and_even_indices_digits(string: str) -> bool:
     '''
     Given a string, check if all the odd indices are alphabets and the even indices are digits.
@@ -327,7 +327,7 @@ def is_odd_indices_alpha_and_even_indices_digits(string: str) -> bool:
             if not char.isalpha():
                 return False
     return True
-
+# practice done
 def swap_even_and_odd_indices(l: List[int]) -> None:
     '''
     Given a list of integers, swap the values at the even indices and the odd indices by modifying the same list.

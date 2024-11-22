@@ -402,3 +402,40 @@ def most_occurring_first_letter(passage: str) -> str :
 
     return(max(list_of_letter , key=list_of_letter.get)) 
 
+def is_odd_indices_alpha_and_even_indices_digits(string : str) -> bool :
+    
+    for index ,  char in  enumerate(string) : 
+        if index % 2 == 0 :
+            if not char.isdigit() :
+                return False
+        else :
+            if not char.isalpha() :
+                return False
+    return True
+string = 'a1b2c3'
+print("8. Is in odd index the value is alpha and in even index the value is odd ? :", is_odd_indices_alpha_and_even_indices_digits(string ) )
+
+
+l = [1, 2, 3, 4, 5, 6]
+#rint("The original list is :", l)
+for i in range(1 , len(l), 2) :
+    l[i-1] , l[i] = l[i] , l[i-1] 
+
+for i in range(0,len(l),2) :
+    l[i+1] , l[i] = l[i] , l[i+1]
+
+
+print("9. swiping the odd index value in even index :", l)
+
+string_1 = "water"
+string_2 = "watch"
+# expected_output = {'e','r'}
+expected_output = set({})
+
+# for i in string_1 :
+#         if i not in string_2 :
+#             expected_output.update(i)
+# print(expected_output)
+# alternative logic is set difference : 
+expected_output =  set(string_1) - set(string_2)
+print("10. Unique character presents which are not present in the second strings are :",expected_output )
