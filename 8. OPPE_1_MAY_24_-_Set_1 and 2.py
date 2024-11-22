@@ -198,7 +198,8 @@ def is_all_same_word_twice(strings: list) -> bool:
             return False
     return True
 
-#problem 3
+# problem 3
+# practice done
 import re
 
 def most_occurring_first_letter(passage: str) -> str:
@@ -224,33 +225,7 @@ def most_occurring_first_letter(passage: str) -> str:
     
     return(max(set_list, key = set_list.get))
 
-
-#problems3
-import re
-def most_occurring_first_letter(passage: str) -> str:
-    '''
-    Returns the letter which occurs most frequently 
-    as the first letter of any word.(case insensitive)
-
-    Args:
-        passage (str): A multi-line string representing the passage.
-
-    Returns:
-        str: The most frequently occurring first letter in lowercase.
-    '''
-    ...
-    
-    set_list ={}
-    passage = passage.strip()
-    for first_letter in list(re.split(r'[ \n]+', passage)) :
-        if first_letter[0].lower() in set_list :
-            set_list[first_letter[0].lower()] = set_list[first_letter[0].lower()] +1  
-        elif first_letter[0].lower() not in set_list:
-            set_list[first_letter[0].lower()] = 1
-    
-    return(max(set_list, key = set_list.get))
-
-#problems4 
+# problems 4 
 # Take the input from standard input using input()
 # and print the output according to the problem .
 

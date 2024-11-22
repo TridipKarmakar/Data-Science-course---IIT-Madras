@@ -402,3 +402,59 @@ def most_occurring_first_letter(passage: str) -> str :
 
     return(max(list_of_letter , key=list_of_letter.get)) 
 
+
+# problem 4 
+
+# loop_input = int(input())
+
+# final_output = [] 
+
+# while (loop_input > 0) :
+
+#     numbers = input() 
+#     unique_numbers_set  = set(str(numbers))
+#     list_repetition =  []
+
+#     for number in unique_numbers_set :
+
+#         list_repetition.append(str(numbers).count((number))) # number of repetition in the numbers strings
+#         list_repetition.append(int(number))
+        
+#     for i in list_repetition :
+#         final_output.append(i)
+#     loop_input -= 1
+
+# print(final_output)
+
+def run_length_encode(n : int , numbers : list ):
+    results = []
+
+    for number in numbers :
+        encoded = []
+        current_digit = number [0]
+        count = 1
+
+        for i in range(1, len(number)) :
+            if number[i] == current_digit :
+                count += 1
+            else :
+                encoded.append(f"{count} {current_digit}")    
+                current_digit = number[i]
+                count = 1
+
+
+
+number =  4  # int(input())
+import_data = '' 
+for i in range(number) :
+    import_data_1 = input()
+    import_data += import_data_1
+    import_data += '\n'
+
+lines  = import_data.strip().split('\n')
+n = int(lines[0].strip())
+numbers = [line.strip() for line in lines[0:]]
+print(numbers)
+
+
+
