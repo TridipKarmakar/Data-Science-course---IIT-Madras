@@ -373,6 +373,7 @@ def row_index_with_most_number_of_zeros(matrix: list) -> int:
 #problems 3
 from collections import defaultdict
 
+#Practice done
 def top_k_teams(batsmen: list, k: int) -> list:
     # Dictionary to store total runs for each team
     team_runs = defaultdict(int)

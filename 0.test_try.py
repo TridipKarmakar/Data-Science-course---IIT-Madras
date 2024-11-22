@@ -454,3 +454,25 @@ def num_squares(n : int) -> dict[int,int] :
 
 final_output = num_squares(int_n)
 print("11. Dictionary with key and their squares as values :",final_output)
+
+
+batsmen = [
+{'name': 'Batsman1', 'runs': 50, 'team': 'TeamA'},
+{'name': 'Batsman2', 'runs': 30, 'team': 'TeamB'},
+{'name': 'Batsman3', 'runs': 70, 'team': 'TeamA'},
+{'name': 'Batsman4', 'runs': 40, 'team': 'TeamC'},
+{'name': 'Batsman5', 'runs': 60, 'team': 'TeamB'}
+]
+
+team = 2
+# find out the top 2 teams based on the total run each have scored -
+ 
+list_of_k = {}
+
+for dict_from_batsman in   range(len(batsmen)) :
+    if batsmen[dict_from_batsman]["team"] not in list_of_k : 
+        list_of_k[batsmen[dict_from_batsman]["team"]] = batsmen[dict_from_batsman]["runs"]
+    else :
+        list_of_k[batsmen[dict_from_batsman]["team"]] = list_of_k[batsmen[dict_from_batsman]["team"]]+batsmen[dict_from_batsman]["runs"]
+list_of_keys = list(list_of_k.keys())[:team]
+print("12. Top two teams are :" , list_of_keys)
