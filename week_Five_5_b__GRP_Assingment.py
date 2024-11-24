@@ -1,30 +1,31 @@
 # GrPA 1 - Dictionary Basics - GRADED
-
+# Practice Done
 def dictionary_operations(fruit_prices:dict, fruits:list):
     # add the fruit fruits[0] to fruit_prices with cost 3
     fruit_prices[fruits[0]] = 3
-    order_print(fruit_prices) # this function is in the hidden code 
+    print(f'1. list of fruits price after adding 3 in 0th index {fruit_prices}') 
 
     # modify the cost of fruits[1] as 2 in fruit_prices
     fruit_prices[fruits[1]] = 2
-    order_print(fruit_prices)
+    print(f'2. list of fruits price after update 2 in 1th index {fruit_prices}')
 
     # increase the cost of fruits[2] by 2 in fruit_prices
     fruit_prices[fruits[2]] += 2
-    order_print(fruit_prices)
-
+    print(f'3. list of fruits price after increase by 2 in 2nd index {fruit_prices}')
+    
     # delete both key and value for fruits[3] from fruit_prices
     del fruit_prices[fruits[3]]
-    order_print(fruit_prices)
+    print(f'4. list of fruits price after after delete the 3rd index fruits {fruit_prices}')
+    
 
     # print the price of fruits[4]
-    print(fruit_prices[fruits[4]])
+    print(f"5. Price of the fruits in 4th index {fruit_prices[fruits[4]]}")
 
     # print the names of fruits in fruit prices as a list sorted in ascending order
-    print(sorted(fruit_prices.keys()))
+    print(f"6. List of fruits {sorted(fruit_prices.keys())}")
 
     # print the prices of the fruits as a list sorted in ascending order.
-    print(sorted(fruit_prices.values()))
+    print(f"7. price of the fruits {sorted(fruit_prices.values())}")
 
 def increase_prices(fruit_prices:dict) -> None:
 
@@ -43,6 +44,7 @@ def increase_prices(fruit_prices:dict) -> None:
         fruit_prices[fruit]*= 1.2
         fruit_prices[fruit] = round(fruit_prices[fruit],2)
 
+# Practice done
 def dict_from_string(string:str,key_type,value_type):
     
     '''
@@ -200,7 +202,7 @@ def is_valid_coordinate(x:int,y:int, M):
 
     r,c = len(M), len(M[0])
     return 0<=x<r and 0<=y<c
-
+# practice done
 def valid_adjacent_coordinates(x:int,y:int, M):
     '''
     Create a set of valid adjacent coordinates(indices) given x,y and a matrix M
@@ -211,6 +213,8 @@ def valid_adjacent_coordinates(x:int,y:int, M):
       if is_valid_coordinate(x1,y1, M)
     }
 
+
+# practice done
 def next_coordinate_with_value(curr_coords, value, M, prev_coords=None):
     '''
     Find the coordinate(indices) of the next coordinate that has the `value` in it. For the starting coordinate the prev_coords would be None
@@ -221,6 +225,8 @@ def next_coordinate_with_value(curr_coords, value, M, prev_coords=None):
         if M[x1][y1] == value:
             return x1,y1
 
+
+# practice done 
 def get_path_coordinates(M):
     '''
     Given the matrix m, find the path formed by 1 from the last row to the first row.
@@ -237,18 +243,22 @@ def get_path_coordinates(M):
     path.append(curr_coords)
     return path
 
+
+# practice done 
 def print_path(M):
     path = get_path_coordinates(M)
 
     for coordinate in path:
         print(coordinate)
 
+# practice done 
 def alternate_path(M):
     path = get_path_coordinates(M)
 
     for i,(x,y) in enumerate(path,1):
         if i%2==0:
             M[x][y] = 2
+
 
 def count_path(M):
     path = get_path_coordinates(M)
@@ -267,6 +277,8 @@ def mirror_vertically(M):
 
     for x,y in path:
         M[-x-1][y] = 1
+
+
 # GrPA 4 - lambda, zip, enumerate, map, filter - GRADED
 
 def groupby(data:list, key:callable):

@@ -289,7 +289,7 @@ def is_right_triangle_with_even_sides(a: int, b: int, c: int) -> bool:
         # Check if both perpendicular sides are even
         return a % 2 == 0 and b % 2 == 0
     return False
-
+# Practice Done 
 def is_odd_indices_alpha_and_even_indices_digits(string: str) -> bool:
     '''
     Given a string, check if all the odd indices are alphabets and the even indices are digits.
@@ -302,7 +302,7 @@ def is_odd_indices_alpha_and_even_indices_digits(string: str) -> bool:
             if not char.isalpha():
                 return False
     return True
-
+# practice done
 def swap_even_and_odd_indices(l: List[int]) -> None:
     '''
     Given a list of integers, swap the values at the even indices and the odd indices by modifying the same list.
@@ -310,13 +310,13 @@ def swap_even_and_odd_indices(l: List[int]) -> None:
     for i in range(1, len(l), 2):
         # Swap the current odd index with the previous even index
         l[i - 1], l[i] = l[i], l[i - 1]
-
+# Practice Done
 def unique_chars_present_in_first_not_in_second(s1: str, s2: str) -> Set[str]:
     '''
     Given two words as strings, find the unique chars that are present in the first word but not in the second word.
     '''
     return set(s1) - set(s2)
-
+# Practice Done
 def repeat(t: Tuple[int, int]) -> Tuple[int, ...]:
     '''
     Given a tuple of length two, create a tuple with a repeated b number of times and b repeated a number of times.
@@ -324,11 +324,14 @@ def repeat(t: Tuple[int, int]) -> Tuple[int, ...]:
     a, b = t
     return (a,) * b + (b,) * a
 
+# practice Done
 def num_squares(n: int) -> Dict[int, int]:
     '''
     Given an integer n, create a dictionary with the numbers from 1 to n (inclusive) as keys and their squares as values.
     '''
     return {i: i ** 2 for i in range(1, n + 1)}
+
+# practice Done
 #problems 2
 def row_index_with_most_number_of_zeros(matrix: list) -> int:
     max_zeros = -1
@@ -345,6 +348,7 @@ def row_index_with_most_number_of_zeros(matrix: list) -> int:
 #problems 3
 from collections import defaultdict
 
+#Practice done
 def top_k_teams(batsmen: list, k: int) -> list:
     # Dictionary to store total runs for each team
     team_runs = defaultdict(int)
