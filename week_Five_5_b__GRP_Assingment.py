@@ -475,3 +475,196 @@ def city_with_max_avg_course_mark(student_data, course):
     return max(course_avg_by_city, key=course_avg_by_city.get)
 
 
+###############################################################################
+#GRPA - 4 Solutions --
+
+# Practice Done
+# mapping
+def is_greater_than_5(numbers:list) -> list:
+    '''Given a list of numbers, return a list of bools corresponding to whether the number is greater than 5'''
+
+    return list(map(lambda x: x>5, numbers))
+
+# Practice Done
+# filtering
+def filter_less_than_5(numbers:list)->list:
+    '''Given an list of numbers, return a list of numbers that are less than 5'''
+
+    return list(filter(lambda x: x<5, numbers))
+
+# Practice Done
+# aggregation with filtering
+def sum_of_two_digit_numbers(numbers:list):
+    '''Given a list of numbers find the sum of all two_digit_numbers.
+    '''
+
+    return sum(filter(lambda x: len(str(x))==2, numbers))
+
+# practice done
+# aggregation with mapping
+def is_all_has_a(words:list)->bool:
+    '''Given a list of words check if all words has the letter a(case insensitive) in it.
+    '''
+
+    return all(map(lambda x: 'a' in x.lower(), words))
+
+
+# practice done
+# enumerate
+def print_with_numbering(items): 
+    '''
+    Print a list in multiple lines with numbering.
+    Eg. ["apple","orange","banana"]
+    1. apple
+    2. orange
+    3. banana
+    '''
+
+    for i, value in enumerate(items,1):
+        print(f"{i}. {value}")
+
+# practice done
+# zip
+def parallel_print(countries, capitals):
+    '''
+    Print the countries and capitals in multiple line seperated by a hyphen with space around it.
+    '''
+
+    for country, capital in zip(countries, capitals):
+        print(f"{country} - {capital}")
+
+
+# practice done
+# key value list to dict
+def make_dict(keys, values):
+    '''Create a dict with keys and values'''
+
+    return dict(zip(keys,values))
+
+
+# enumerate with filtering and map
+def indices_of_big_words(words) -> list:
+    '''Given a list of words, find the indices of the big words(length greater than 5).
+    '''
+
+    return list(map(
+      lambda x: x[0], # taking only the indices
+      filter(lambda y: len(y[1])>5, enumerate(words)) # filtering with size
+    ))
+
+# zip with mapping and aggregation
+def decode_rle(chars:str, repeats:list)->str:
+    '''
+    Create a string with i-th char from chars repeated i-th value of repeats number of times. 
+
+    Note rle refers to Run-length encoding
+    '''
+
+    return "".join(map(lambda x: x[0]*x[1], zip(chars, repeats)))
+############################################################################################
+# GRPA 5 
+
+import random
+def generate_student_data(n_students, courses, cities, random_seed=42):
+    '''
+    Create a list of dict with dictionaries representing each attributes of each student.
+    '''
+    random.seed(random_seed)
+    return [
+      {
+        "rollno": i, "city": random.choice(cities), 
+        **{course: random.randint(1,100) for course in courses} 
+      }
+      for i in range(1,n_students+1)
+    ]
+
+# practice done
+
+def groupby(data:list, key:callable):
+    '''
+    Given a list of items, and a key, create a dictionary with the key as key function called 
+    on item and the list of items with the same key as the corresponding value. 
+    The order of items in the group should be the same order in the original list
+    '''
+
+    groups = {}
+    for item in data:
+        group = key(item)
+        if group not in groups:
+            groups[group] = []
+        groups[group].append(item)
+    return groups
+
+def apply_to_groups(groups:dict, func:callable):
+    '''
+    Apply a function to the list of items for each group.
+    '''
+
+    return {
+      group: func(members)
+      for group, members in groups.items()
+    }
+
+def min_course_marks(student_data, course):
+    '''Return the min marks on a given course'''
+
+    return min(map(lambda x:x[course], student_data))
+
+def max_course_marks(student_data, course):
+    '''Return the max marks on a given course'''
+
+    return max(map(lambda x:x[course], student_data))
+
+def rollno_of_max_marks(student_data, course):
+    '''Return the rollno of student with max marks in a course'''
+
+    return max(student_data,key= lambda x: x[course])['rollno']
+
+def sort_rollno_by_marks(student_data, course1, course2, course3):
+    '''
+    Return a sorted list of rollno sorted based on their marks on the three course marks. 
+    course1 is compared first, then course2, then course3 to break ties.
+    Hint: use tuples comparision
+    '''
+
+    sorted_student_data = sorted(student_data,key= lambda stud: (stud[course1],stud[course2],stud[course3]))
+    return list(map(lambda stud: stud["rollno"], sorted_student_data))
+
+def count_students_by_cities(student_data):
+    '''
+    Create a dictionary with city as key and number of students from each city as value.
+    '''
+
+    students_by_city = groupby(student_data, lambda stud: stud["city"])
+    return apply_to_groups(students_by_city, len)
+
+def city_with_max_no_of_students(student_data):
+    '''
+    Find the city with the maximum number of students.
+    '''
+
+    city_student_count = count_students_by_cities(student_data)
+    return max(city_student_count, key=city_student_count.get)
+
+def group_rollnos_by_cities(student_data):
+    '''
+    Create a dictionary with city as key and 
+    a sorted list of rollno of students that belong to 
+    that city as the value.
+    '''
+
+    # this lambda is named so that it is easy to remember what it is doing.
+    get_sorted_rollnos = lambda items: sorted(map(lambda item: item['rollno'],items))
+    students_by_city = groupby(student_data, lambda x: x["city"])
+    return apply_to_groups(students_by_city, get_sorted_rollnos)
+
+def city_with_max_avg_course_mark(student_data, course):
+    '''
+    Find the city with the maximum avg course marks.
+    '''
+
+    students_by_city = groupby(student_data, lambda x: x['city'])
+    avg = lambda x: sum(x)/len(x)
+    get_course_avg = lambda items: avg(list(map(lambda x: x[course], items)))
+    course_avg_by_city = apply_to_groups(students_by_city,get_course_avg)
+    return max(course_avg_by_city, key=course_avg_by_city.get)

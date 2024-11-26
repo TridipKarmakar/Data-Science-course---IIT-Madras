@@ -618,7 +618,7 @@
 #             final_list.append((row,col))
 # print(final_list)
           
-numbers = [0, 8, 5, 3, 10]
+# numbers = [0, 8, 5, 3, 10]
 
 # def groupby(data:list, key:callable):
 #     '''
@@ -651,8 +651,8 @@ numbers = [0, 8, 5, 3, 10]
 # for country , capital in zip(countries, capitals) :
 #     print(f"{country} - {capital }")
 
-keys = "abcd"
-value = [1,2,3,4]
+# keys = "abcd"
+# value = [1,2,3,4]
 # # dict_out = {}
 # # for key , value in zip(keys,value) :
 # #     dict_out[key] = value
@@ -680,8 +680,84 @@ value = [1,2,3,4]
 
 # print(list(map(lambda x : x[0],filter(lambda y : len(y[1]) > 5 , enumerate(words)))))
 
-chars = "abcd"
-repeats = [2,4,3,1]
+# chars = "abcd"
+# repeats = [2,4,3,1]
 
 
-print("".join((map(lambda x : x[0]* x[1] ,zip(chars,repeats)))))
+# print("".join((map(lambda x : x[0]* x[1] ,zip(chars,repeats)))))
+
+# matrix = [
+# [0, 0, 1, 1],
+# [0, 0, 0, 1],
+# [1, 1, 1, 1],
+# [1, 0, 0, 0],
+# [1, 1, 0, 0]
+# ]
+# output_matrix = [
+# [0, 0, 10, 9],
+# [0, 0, 0, 8],
+# [4, 5, 6, 7],
+# [3, 0, 0, 0],
+# [2, 1, 0, 0]
+# ]
+
+# Count_dig = 1
+
+# for i in range(len(matrix)-1,-1,-1) :
+#     print(i)
+
+# for row in  range(len(matrix)-1,-1,-1) :
+#     for col in range(0,len(matrix[0])) :
+#         if matrix[row][col] == 1 :
+#             matrix[row][col] = Count_dig 
+#             Count_dig +=1
+# print(matrix)
+
+
+# numbers = [3,4,5,6,7]
+# print(list(map(lambda x : x > 5, numbers))) 
+
+# words_str = "Given a list of words check if all words has the letter a(case insensitive) in it."
+
+# words = words_str.split(' ')
+
+# # print(words)
+# # print(list(map(lambda x : 'a' in x.lower(), words)))
+# list_apple =  ["apple","orange","banana"]
+
+# for i, value in enumerate(list_apple,start=1) :
+#     print(i,value)
+
+
+
+# words = ["Apple","Banana","Orange","Kiwi","Cherry"]
+
+# list_of_fruits =(list(i[0] for i in list(filter(lambda x : len(x[1]) > 5 ,enumerate(words)))))
+# print(list_of_fruits)
+
+
+# data = ["Apple","Banana","Orange","Orango","Kuttaj","Cherry","Mango"]
+
+# dzier_output = {
+#     5: ["Apple", "Mango"],
+#     6: ["Banana","Orange","Cherry"]}
+
+
+# def group_by(data : list , key : callable) :
+#     group_by_dict = {}
+#     for items in data:
+#         group_key = key(items)
+#         if group_key not in group_by_dict :
+#             group_by_dict[group_key] = []
+#         group_by_dict[group_key].append(items)
+#     return group_by_dict
+
+
+# Group_by_dict = group_by(data,len)
+# print(Group_by_dict)
+
+
+     
+
+
+
