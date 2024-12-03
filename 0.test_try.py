@@ -757,7 +757,10 @@
 # print(Group_by_dict)
 
 
-     
+# numbers  = ("1,2,3,4,5")
+# list_of_ages = list(map(int,numbers.split(",")))
+# print(list_of_ages)
 
+name, age, *roll = "Tridip Karmakar", 12, 13, 14 ,15 ,16 ,17, 18, 21 
 
-
+print(roll)
