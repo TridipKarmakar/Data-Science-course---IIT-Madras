@@ -170,6 +170,7 @@ def get_all_batsman_runs():
     return batsman_runs
 
 # csv - list of dicts
+# Practice Done 
 def get_student_marks():
     '''
     Given the student rollno, city, age,
@@ -252,6 +253,7 @@ def get_student_data_over_multiple_lines():
 import random
 
 # heterogenous values in multiple lines
+# practice done
 def display_student_details(name:str, age:int, rollno:int):
     '''
     Given name, age, and rollno of student,
@@ -270,6 +272,7 @@ def display_student_details(name:str, age:int, rollno:int):
     print(rollno)
 
 # heterogeneous values - single line
+# Practice Done
 def display_student_details_same_line(name:str, age:int, rollno:int):
     '''
     Given name, age, and rollno of student,
